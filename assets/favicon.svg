@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ashqeen mark">
+  <rect width="64" height="64" rx="12" fill="#1f2933"/>
+  <path d="M17 49 30.5 15h4L48 49h-7.4l-2.5-7H26.9l-2.5 7H17Zm12-13h7.9L33 24.8 29 36Z" fill="#fffdf8"/>
+  <path d="M11 12h16" stroke="#c58b2b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M41 52h12" stroke="#2f735a" stroke-width="4" stroke-linecap="round"/>
+</svg>

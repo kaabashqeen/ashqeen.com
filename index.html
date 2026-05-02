@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website for Ashqeen.">
+    <meta name="theme-color" content="#f7f4ee">
+    <title>Ashqeen</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Ashqeen home">
+        <img src="assets/favicon.svg" alt="" width="32" height="32">
+        <span>ashqeen.com</span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Personal website</p>
+          <h1 id="intro-title">Ashqeen</h1>
+          <p class="lede">
+            A simple home base for projects, writing, notes, and the things worth sharing.
+          </p>
+          <div class="actions" aria-label="Page links">
+            <a class="button primary" href="#work">See work</a>
+            <a class="button secondary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="portrait-panel" aria-hidden="true">
+          <div class="monogram">A</div>
+          <div class="signal-line one"></div>
+          <div class="signal-line two"></div>
+          <div class="signal-line three"></div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <p class="section-kicker">About</p>
+        <h2 id="about-title">A quiet corner of the internet.</h2>
+        <p>
+          This starter page is ready to customize with your bio, current interests,
+          links, and anything else you want people to find when they visit ashqeen.com.
+        </p>
+      </section>
+
+      <section class="section work-grid" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="section-kicker">Work</p>
+          <h2 id="work-title">Things to add next</h2>
+        </div>
+        <article>
+          <span class="item-index">01</span>
+          <h3>Projects</h3>
+          <p>Add links to apps, experiments, repositories, or anything you have built.</p>
+        </article>
+        <article>
+          <span class="item-index">02</span>
+          <h3>Writing</h3>
+          <p>Collect essays, notes, research, reading lists, or quick updates.</p>
+        </article>
+        <article>
+          <span class="item-index">03</span>
+          <h3>Profile</h3>
+          <p>Share a short bio, location, resume link, or social profiles.</p>
+        </article>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <p class="section-kicker">Contact</p>
+        <h2 id="contact-title">Make this yours.</h2>
+        <p>
+          Replace this section with your email, LinkedIn, GitHub, newsletter, or
+          whatever path you want visitors to use.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; <span id="year"></span> Ashqeen</span>
+      <a href="/">ashqeen.com</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

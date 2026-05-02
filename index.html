@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal website for Ashqeen.">
-    <meta name="theme-color" content="#f7f4ee">
-    <title>Ashqeen</title>
+    <meta name="description" content="Personal research index for Ashqeen.">
+    <meta name="theme-color" content="#f7f7f2">
+    <title>Ashqeen Research</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
@@ -13,81 +13,177 @@
   <body>
     <header class="site-header" aria-label="Primary">
       <a class="brand" href="/" aria-label="Ashqeen home">
-        <img src="assets/favicon.svg" alt="" width="32" height="32">
-        <span>ashqeen.com</span>
+        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span>Ashqeen</span>
       </a>
-      <nav>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#index">Research</a>
+        <a href="#index">Projects</a>
         <a href="#about">About</a>
-        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="header-link" href="mailto:hello@ashqeen.com">Get in touch</a>
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Personal website</p>
-          <h1 id="intro-title">Ashqeen</h1>
-          <p class="lede">
-            A simple home base for projects, writing, notes, and the things worth sharing.
-          </p>
-          <div class="actions" aria-label="Page links">
-            <a class="button primary" href="#work">See work</a>
-            <a class="button secondary" href="#contact">Get in touch</a>
+      <section class="page-intro" aria-labelledby="page-title">
+        <p class="breadcrumb">Open index</p>
+        <h1 id="page-title">Research</h1>
+      </section>
+
+      <section class="index-shell" id="index" aria-label="Research index">
+        <div class="index-tabs" role="tablist" aria-label="Filter research">
+          <button class="tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="tab" type="button" data-filter="publication" aria-pressed="false">Publication</button>
+          <button class="tab" type="button" data-filter="project" aria-pressed="false">Project</button>
+          <button class="tab" type="button" data-filter="note" aria-pressed="false">Note</button>
+          <button class="tab" type="button" data-filter="experiment" aria-pressed="false">Experiment</button>
+        </div>
+
+        <div class="index-controls" aria-label="Index controls">
+          <span id="result-count">8 entries</span>
+          <div class="control-group">
+            <button class="control-button" type="button" id="sort-toggle" aria-pressed="false">Sort newest</button>
+            <button class="control-button" type="button" id="media-toggle" aria-pressed="true">Hide media</button>
           </div>
         </div>
-        <div class="portrait-panel" aria-hidden="true">
-          <div class="monogram">A</div>
-          <div class="signal-line one"></div>
-          <div class="signal-line two"></div>
-          <div class="signal-line three"></div>
+
+        <div class="article-grid" id="article-grid">
+          <article class="research-card" data-category="publication" data-date="2026-04-29">
+            <a href="#contact" aria-label="Read Systems for quieter focus">
+              <div class="card-meta">
+                <span>Publication</span>
+                <time datetime="2026-04-29">Apr 29, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>Systems for quieter focus</h2>
+                <p>Notes on personal infrastructure, attention, and choosing tools that make thinking easier to return to.</p>
+              </div>
+              <div class="card-media media-field" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="project" data-date="2026-04-18">
+            <a href="#contact" aria-label="Read A compact writing desk">
+              <div class="card-meta">
+                <span>Project</span>
+                <time datetime="2026-04-18">Apr 18, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>A compact writing desk</h2>
+                <p>A small publishing workflow for drafts, excerpts, references, and finished notes.</p>
+              </div>
+              <div class="card-media media-desk" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="note" data-date="2026-04-02">
+            <a href="#contact" aria-label="Read What makes a useful archive">
+              <div class="card-meta">
+                <span>Note</span>
+                <time datetime="2026-04-02">Apr 2, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>What makes a useful archive</h2>
+                <p>How metadata, titles, and summaries can turn a folder of things into a place worth revisiting.</p>
+              </div>
+              <div class="card-media media-archive" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="experiment" data-date="2026-03-24">
+            <a href="#contact" aria-label="Read Interface sketches for habits">
+              <div class="card-meta">
+                <span>Experiment</span>
+                <time datetime="2026-03-24">Mar 24, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>Interface sketches for habits</h2>
+                <p>Explorations in lightweight dashboards, durable routines, and signals that stay out of the way.</p>
+              </div>
+              <div class="card-media media-sketch" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="publication" data-date="2026-03-11">
+            <a href="#contact" aria-label="Read The shape of a good homepage">
+              <div class="card-meta">
+                <span>Publication</span>
+                <time datetime="2026-03-11">Mar 11, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>The shape of a good homepage</h2>
+                <p>A practical look at what a personal site needs when it has to be clear, flexible, and alive.</p>
+              </div>
+              <div class="card-media media-home" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="project" data-date="2026-02-27">
+            <a href="#contact" aria-label="Read Data garden prototypes">
+              <div class="card-meta">
+                <span>Project</span>
+                <time datetime="2026-02-27">Feb 27, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>Data garden prototypes</h2>
+                <p>Small visual systems for tracking collections, reading, recurring questions, and unfinished ideas.</p>
+              </div>
+              <div class="card-media media-garden" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="note" data-date="2026-02-08">
+            <a href="#contact" aria-label="Read Inventory as memory">
+              <div class="card-meta">
+                <span>Note</span>
+                <time datetime="2026-02-08">Feb 8, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>Inventory as memory</h2>
+                <p>Why lists, logs, and indexes are more useful when they include a point of view.</p>
+              </div>
+              <div class="card-media media-memory" aria-hidden="true"></div>
+            </a>
+          </article>
+
+          <article class="research-card" data-category="experiment" data-date="2026-01-19">
+            <a href="#contact" aria-label="Read A slower command center">
+              <div class="card-meta">
+                <span>Experiment</span>
+                <time datetime="2026-01-19">Jan 19, 2026</time>
+              </div>
+              <div class="card-body">
+                <h2>A slower command center</h2>
+                <p>A prototype for collecting tasks, references, and decisions without turning everything into noise.</p>
+              </div>
+              <div class="card-media media-center" aria-hidden="true"></div>
+            </a>
+          </article>
         </div>
       </section>
 
-      <section class="section" id="about" aria-labelledby="about-title">
+      <section class="about-band" id="about" aria-labelledby="about-title">
         <p class="section-kicker">About</p>
-        <h2 id="about-title">A quiet corner of the internet.</h2>
+        <h2 id="about-title">A living index for work in progress.</h2>
         <p>
-          This starter page is ready to customize with your bio, current interests,
-          links, and anything else you want people to find when they visit ashqeen.com.
-        </p>
-      </section>
-
-      <section class="section work-grid" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <p class="section-kicker">Work</p>
-          <h2 id="work-title">Things to add next</h2>
-        </div>
-        <article>
-          <span class="item-index">01</span>
-          <h3>Projects</h3>
-          <p>Add links to apps, experiments, repositories, or anything you have built.</p>
-        </article>
-        <article>
-          <span class="item-index">02</span>
-          <h3>Writing</h3>
-          <p>Collect essays, notes, research, reading lists, or quick updates.</p>
-        </article>
-        <article>
-          <span class="item-index">03</span>
-          <h3>Profile</h3>
-          <p>Share a short bio, location, resume link, or social profiles.</p>
-        </article>
-      </section>
-
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <p class="section-kicker">Contact</p>
-        <h2 id="contact-title">Make this yours.</h2>
-        <p>
-          Replace this section with your email, LinkedIn, GitHub, newsletter, or
-          whatever path you want visitors to use.
+          This site collects projects, writing, notes, and experiments in a format
+          built for scanning first and reading next.
         </p>
       </section>
     </main>
 
-    <footer>
-      <span>&copy; <span id="year"></span> Ashqeen</span>
-      <a href="/">ashqeen.com</a>
+    <footer id="contact">
+      <div>
+        <h2>Ashqeen</h2>
+        <p>Personal research, projects, and notes.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="mailto:hello@ashqeen.com">Email</a>
+        <a href="#index">Index</a>
+        <a href="/">Home</a>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Ashqeen</p>
     </footer>
 
     <script src="script.js"></script>

@@ -2,3 +2,10 @@
 node_modules/
 .wrangler/
 .dev.vars
+vscode/
+claude/
+codex/
+assets/build-trail-data.js
+docs/build-trail/raw/
+docs/build-trail/ygoplus-build-journal.md
+chatgpt/

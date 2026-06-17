@@ -2,3 +2,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/trail.html
+  X-Robots-Tag: noindex, nofollow
+
+/assets/build-trail-data.js
+  X-Robots-Tag: noindex, nofollow

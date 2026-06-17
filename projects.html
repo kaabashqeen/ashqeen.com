@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Projects by Kaab Ashqeen — applied ML coursework, shipped data products, and AI-assisted builds.">
+    <meta name="theme-color" content="#f7f8f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+    <title>Kaab Ashqeen — Projects</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,30..100&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="projects-page">
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Kaab Ashqeen home">
+        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span>Kaab Ashqeen</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="/#what-i-do">What I Do</a>
+        <a href="/projects.html" aria-current="page">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="header-link" href="mailto:kaab.ashqeen@yahoo.com">Email</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="projects-hero" aria-labelledby="projects-title">
+        <p class="eyebrow">Projects</p>
+        <h1 id="projects-title">Work that shows how I actually think.</h1>
+        <p>
+          For now, this page keeps the spotlight on YGOPLUS: the shipped product
+          with the clearest public links, build trail, analytics, and proof of how
+          I move from idea to working system.
+        </p>
+      </section>
+
+      <section class="project-index" aria-label="Project list">
+        <article class="project-row is-featured">
+          <div class="project-row-main">
+            <span class="project-status">Live product · 2024–present</span>
+            <h2>YGOPLUS</h2>
+            <p>
+              A Yu-Gi-Oh! deck testing and analysis tool built around competitive
+              player workflows: card search, deck construction, probability tools,
+              endboard helpers, pricing context, accounts, and subscriptions.
+              Built end-to-end and iterated mostly through prompted code, with
+              hand-tuned UX. The deepest case study on this site.
+            </p>
+          </div>
+          <dl class="project-facts">
+            <div>
+              <dt>Role</dt>
+              <dd>Sole builder &amp; product owner</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>Python, Flask, PostgreSQL, JS, Stripe, Cloudflare</dd>
+            </div>
+            <div>
+              <dt>Signal</dt>
+              <dd>Full-stack execution + AI-assisted iteration with thousands of recorded prompts</dd>
+            </div>
+            <div>
+              <dt>Audience</dt>
+              <dd>Competitive Yu-Gi-Oh! players and content creators</dd>
+            </div>
+          </dl>
+          <div class="project-row-actions">
+            <a class="feature-link is-primary" href="https://ygoplus.com">Open ygoplus.com</a>
+            <a class="feature-link" href="/analytics.html">Analytics</a>
+            <a class="feature-link" href="/changelog.html">Changelog</a>
+            <a class="feature-link" href="/trail.html">Build trail</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <h2>Kaab Ashqeen</h2>
+        <p>Applied data, ML, and the products built around them.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/">Home</a>
+        <a href="/#what-i-do">What I Do</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <p class="copyright">&copy; 2026 Kaab Ashqeen</p>
+    </footer>
+
+    <script src="theme.js" defer></script>
+  </body>
+</html>

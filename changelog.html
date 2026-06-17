@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Digestible YGOPLUS product changes, release notes, fixes, and implementation highlights.">
+    <meta name="theme-color" content="#f7f8f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+    <title>Ashqeen — YGOPLUS Changelog</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,30..100&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Ashqeen home">
+        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span>Ashqeen</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="/#what-i-do">What I Do</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="header-link" href="mailto:kaab.ashqeen@yahoo.com">Email</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero changelog-hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">YGOPLUS · build digest</p>
+          <h1 id="page-title">What got built, <em>summarized from the prompt history</em>.</h1>
+        </div>
+        <div class="hero-panel" aria-label="Changelog summary">
+          <p>
+            Each entry is auto-generated from the YGOPLUS build prompt history —
+            grouped by session, summarized by theme, and filtered down to actual
+            product work. Security-sensitive and career-related prompts are excluded.
+            Raw transcripts stay local.
+          </p>
+          <dl class="stat-grid">
+            <div>
+              <dt>Digest entries</dt>
+              <dd id="change-stat-entries">-</dd>
+            </div>
+            <div>
+              <dt>Prompts ingested</dt>
+              <dd id="change-stat-prompts">-</dd>
+            </div>
+            <div>
+              <dt>Latest entry</dt>
+              <dd id="change-stat-latest">-</dd>
+            </div>
+            <div>
+              <dt>Bug fixes</dt>
+              <dd id="change-stat-fixes">-</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="changelog-shell" id="updates" aria-labelledby="updates-title">
+        <div class="section-heading trail-heading">
+          <div>
+            <p class="eyebrow">Build digest</p>
+            <h2 id="updates-title">Prompt sessions grouped by what changed.</h2>
+          </div>
+          <p id="change-result-count">Loading updates</p>
+        </div>
+
+        <div class="trail-controls" aria-label="Changelog controls">
+          <label class="search-field">
+            <span>Search</span>
+            <input id="change-search" type="search" placeholder="Search updates, areas, sources">
+          </label>
+          <div class="filter-wrap">
+            <button class="sort-button" id="change-sort-toggle" type="button" aria-pressed="true">Newest first</button>
+            <div class="filter-tabs" role="tablist" aria-label="Filter changelog">
+              <button class="tab is-active" type="button" data-change-filter="all" aria-pressed="true">All</button>
+              <button class="tab" type="button" data-change-filter="fix" aria-pressed="false">Fixes</button>
+              <button class="tab" type="button" data-change-filter="feature" aria-pressed="false">Features</button>
+              <button class="tab" type="button" data-change-filter="improvement" aria-pressed="false">Polish</button>
+              <button class="tab" type="button" data-change-filter="ops" aria-pressed="false">Ops</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="changelog-list" id="changelog-list"></div>
+        <button class="load-more" id="change-load-more" type="button">Load more</button>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <h2>Ashqeen</h2>
+        <p>Personal projects, research, and build notes.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/">Home</a>
+        <a href="/#projects">Projects</a>
+        <a href="/analytics.html">YGOPLUS analytics</a>
+        <a href="https://ygoplus.com">Live project</a>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Ashqeen</p>
+    </footer>
+
+    <script src="assets/changelog-data.js?v=1"></script>
+    <script src="changelog.js"></script>
+    <script src="theme.js" defer></script>
+  </body>
+</html>

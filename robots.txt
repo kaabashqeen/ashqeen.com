@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /trail.html
+Disallow: /assets/build-trail-data.js

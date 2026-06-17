@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Local prompt archive and public archive note for the YGOPLUS build trail.">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="theme-color" content="#f7f8f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+    <title>Ashqeen — YGOPLUS Prompt Archive</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,30..100&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Ashqeen home">
+        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span>Ashqeen</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="/#what-i-do">What I Do</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="header-link" href="mailto:kaab.ashqeen@yahoo.com">Email</a>
+      </div>
+    </header>
+
+    <main>
+      <div id="prod-archive">
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow">YGOPLUS · source material</p>
+            <h1 id="page-title">The prompt archive stays <em>local</em>.</h1>
+          </div>
+          <div class="hero-panel" aria-label="Prompt archive note">
+            <p>
+              The full prompt trail is source material for analysis, QA, and personal
+              review. On the live site I keep the raw transcript out of the way and
+              show the interpreted layers instead: analytics first, product digest
+              second.
+            </p>
+            <a class="hero-action" href="/analytics.html">Return to analytics</a>
+          </div>
+        </section>
+
+        <section class="home-index" aria-labelledby="archive-depth-title">
+          <div class="section-heading">
+            <p class="eyebrow">Artifact ladder</p>
+            <h2 id="archive-depth-title">The public version moves from signal to detail.</h2>
+          </div>
+          <div class="home-links">
+            <a href="/analytics.html">
+              <span class="link-num">01</span>
+              <span class="link-title">Analytics read</span>
+              <span class="link-desc">Cadence, focus, implementation footprint, and work-style signal.</span>
+              <span class="link-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="/changelog.html">
+              <span class="link-num">02</span>
+              <span class="link-title">Product changelog</span>
+              <span class="link-desc">Digestible notes on features, fixes, polish, and operational improvements.</span>
+              <span class="link-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="/#projects">
+              <span class="link-num">03</span>
+              <span class="link-title">Project context</span>
+              <span class="link-desc">YGOPLUS lives inside the broader Projects section instead of taking over site navigation.</span>
+              <span class="link-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <div id="local-archive" hidden>
+        <section class="hero" aria-labelledby="local-page-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Local-only archive</p>
+            <h1 id="local-page-title">Building YGOPLUS, <em>prompt by prompt</em>.</h1>
+          </div>
+          <div class="hero-panel" aria-label="Build trail summary">
+            <p>
+              This view is only enabled on local previews. It loads the generated
+              build trail from disk so I can search, audit, and re-digest the raw
+              work without putting it on the live site.
+            </p>
+            <dl class="stat-grid">
+              <div>
+                <dt>Prompts</dt>
+                <dd id="stat-actions">-</dd>
+              </div>
+              <div>
+                <dt>Sessions</dt>
+                <dd id="stat-sessions">-</dd>
+              </div>
+              <div>
+                <dt>First log</dt>
+                <dd id="stat-first">-</dd>
+              </div>
+              <div>
+                <dt>Latest log</dt>
+                <dd id="stat-last">-</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="month-strip" id="months" aria-labelledby="months-title">
+          <div class="section-heading">
+            <p class="eyebrow">Chronology</p>
+            <h2 id="months-title">Months of iteration.</h2>
+          </div>
+          <div class="month-list" id="month-list"></div>
+        </section>
+
+        <section class="trail-shell" id="trail" aria-labelledby="trail-title">
+          <div class="section-heading trail-heading">
+            <div>
+              <p class="eyebrow">Prompt trail</p>
+              <h2 id="trail-title">Latest prompts first, with the full local trail intact.</h2>
+            </div>
+            <p id="result-count">Loading entries</p>
+          </div>
+
+          <div class="trail-controls" aria-label="Trail controls">
+            <label class="search-field">
+              <span>Search</span>
+              <input id="trail-search" type="search" placeholder="Search prompts, sessions, sources">
+            </label>
+            <div class="filter-wrap">
+              <button class="sort-button" id="sort-toggle" type="button" aria-pressed="true">Newest first</button>
+              <div class="filter-tabs" role="tablist" aria-label="Filter build trail">
+                <button class="tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="tab" type="button" data-filter="product" aria-pressed="false">Product</button>
+                <button class="tab" type="button" data-filter="interface" aria-pressed="false">Interface</button>
+                <button class="tab" type="button" data-filter="infrastructure" aria-pressed="false">Infra</button>
+                <button class="tab" type="button" data-filter="business" aria-pressed="false">Business</button>
+                <button class="tab" type="button" data-filter="process" aria-pressed="false">Process</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="trail-list" id="trail-list"></div>
+          <button class="load-more" id="load-more" type="button">Load more</button>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <h2>Ashqeen</h2>
+        <p>Product analytics, AI-assisted build systems, and project notes.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/">Home</a>
+        <a href="/#projects">Projects</a>
+        <a href="/analytics.html">YGOPLUS analytics</a>
+        <a href="/changelog.html">Build digest</a>
+      </div>
+      <p class="copyright">&copy; 2026 Ashqeen</p>
+    </footer>
+
+    <script src="trail-local.js"></script>
+    <script src="theme.js" defer></script>
+  </body>
+</html>

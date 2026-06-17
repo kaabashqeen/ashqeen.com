@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="YGOPLUS build analytics, activity rhythm, and implementation footprint.">
+    <meta name="theme-color" content="#f7f8f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+    <title>Ashqeen — YGOPLUS Analytics</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,30..100&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Ashqeen home">
+        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span>Ashqeen</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="/#what-i-do">What I Do</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="header-link" href="mailto:kaab.ashqeen@yahoo.com">Email</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero analytics-hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">YGOPLUS · public analysis layer</p>
+          <h1 id="page-title">How the build history <em>took shape</em>.</h1>
+        </div>
+        <div class="hero-panel" aria-label="Analytics summary">
+          <p>
+            A readable layer on top of the build history: what kept getting built,
+            where the assistant loop helped, and when the work found its rhythm.
+          </p>
+          <dl class="stat-grid">
+            <div>
+              <dt>Prompts analyzed</dt>
+              <dd id="analytics-stat-prompts">-</dd>
+            </div>
+            <div>
+              <dt>Most active day</dt>
+              <dd id="analytics-stat-day">-</dd>
+            </div>
+            <div>
+              <dt>Longest run</dt>
+              <dd id="analytics-stat-streak">-</dd>
+            </div>
+            <div>
+              <dt>Implementation prompts</dt>
+              <dd id="analytics-stat-code-prompts">-</dd>
+            </div>
+            <div>
+              <dt>Assistant surfaces</dt>
+              <dd id="analytics-stat-files">-</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="personality-band" id="style" aria-labelledby="style-title">
+        <div>
+          <p class="eyebrow">Build style</p>
+          <h2 id="style-title">What the build history says about how this project got made.</h2>
+        </div>
+        <div class="personality-card">
+          <p class="profile-kicker">Dominant pattern</p>
+          <h3 id="personality-name">-</h3>
+          <p id="personality-summary">Loading profile.</p>
+          <div class="trait-list" id="trait-bars"></div>
+          <p class="profile-note" id="personality-note"></p>
+        </div>
+      </section>
+
+      <section class="analytics-shell" id="code" aria-labelledby="code-title">
+        <div class="section-heading trail-heading">
+          <div>
+            <p class="eyebrow">Implementation footprint</p>
+            <h2 id="code-title">How much product work the assistant loop carried.</h2>
+          </div>
+          <p id="code-change-note">Implementation prompts include all assistants.</p>
+        </div>
+
+        <div class="analytics-grid code-change-grid">
+          <article class="analytics-panel analytics-panel-wide">
+            <div class="panel-heading">
+              <h3>Implementation by source</h3>
+              <p>Prompts that read like product, code, design, debugging, or deployment work.</p>
+            </div>
+            <div class="bar-list" id="implementation-source-bars"></div>
+          </article>
+
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Implementation by focus area</h3>
+              <p>Where the product work clustered.</p>
+            </div>
+            <div class="bar-list" id="implementation-category-bars"></div>
+          </article>
+
+          <article class="analytics-panel metadata-note-panel">
+            <div class="panel-heading">
+              <h3>About file counts</h3>
+              <p id="metadata-summary">-</p>
+            </div>
+            <p class="insight-line" id="metadata-note">Exact edited-file counts are treated as secondary metadata, not the main measure of implementation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="analytics-shell" id="rhythm" aria-labelledby="rhythm-title">
+        <div class="section-heading trail-heading">
+          <div>
+            <p class="eyebrow">Activity rhythm</p>
+            <h2 id="rhythm-title">The hours and days that carried the work.</h2>
+          </div>
+        </div>
+
+        <div class="analytics-grid">
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Weekdays</h3>
+              <p>The weekly cadence.</p>
+            </div>
+            <div class="bar-list" id="weekday-bars"></div>
+          </article>
+
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Sources</h3>
+              <p>Where the work was captured.</p>
+            </div>
+            <div class="bar-list" id="source-bars"></div>
+          </article>
+
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Months</h3>
+              <p>The busiest build months.</p>
+            </div>
+            <div class="bar-list" id="month-bars"></div>
+          </article>
+
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Focus areas</h3>
+              <p>What the prompts were usually about.</p>
+            </div>
+            <div class="bar-list" id="category-bars"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="analytics-shell" id="streaks" aria-labelledby="streaks-title">
+        <div class="section-heading trail-heading">
+          <div>
+            <p class="eyebrow">Longest prompting runs</p>
+            <h2 id="streaks-title">Focused stretches of iteration.</h2>
+          </div>
+          <p>Grouped when prompts arrive within 45 minutes of each other.</p>
+        </div>
+        <div class="streak-list" id="streak-list"></div>
+      </section>
+
+      <section class="analytics-shell purpose-first" id="purpose" aria-labelledby="purpose-title">
+        <div class="section-heading trail-heading">
+          <div>
+            <p class="eyebrow">Build read</p>
+            <h2 id="purpose-title">A working record of shipping, debugging, and polishing YGOPLUS.</h2>
+          </div>
+        </div>
+
+        <div class="analytics-grid purpose-grid">
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Primary pattern</h3>
+              <p id="purpose-profile">Loading profile.</p>
+            </div>
+            <p class="insight-line">Most prompts are practical: fix the rough edge, wire the feature, clean the interface, check the data.</p>
+          </article>
+
+          <article class="analytics-panel">
+            <div class="panel-heading">
+              <h3>Implementation prompts</h3>
+              <p id="purpose-implementation">-</p>
+            </div>
+            <p class="insight-line">This counts product, code, design, debugging, and deployment work across every assistant surface.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <h2>Ashqeen</h2>
+        <p>Personal projects, research, and build notes.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/">Home</a>
+        <a href="/#projects">Projects</a>
+        <a href="/changelog.html">YGOPLUS digest</a>
+        <a href="https://ygoplus.com">Live project</a>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Ashqeen</p>
+    </footer>
+
+    <script src="assets/analytics-data.js?v=1"></script>
+    <script src="analytics.js"></script>
+    <script src="theme.js" defer></script>
+  </body>
+</html>

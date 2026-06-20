@@ -26,4 +26,21 @@
   if (yearEl && !yearEl.textContent.trim()) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // Mobile nav toggle
+  var navToggle = document.querySelector("[data-nav-toggle]");
+  var siteHeader = document.querySelector(".site-header");
+  if (navToggle && siteHeader) {
+    navToggle.addEventListener("click", function () {
+      var isOpen = siteHeader.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    // Close nav when a link is clicked
+    document.querySelectorAll(".primary-nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        siteHeader.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 })();

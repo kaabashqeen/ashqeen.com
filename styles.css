@@ -168,6 +168,39 @@ input {
   color: var(--ink);
 }
 
+/* ---------- nav toggle (hamburger) ---------- */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease);
+}
+
+.nav-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-toggle .icon-close { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--panel);
+  outline: none;
+}
+
 /* ---------- header ---------- */
 .site-header {
   position: sticky;
@@ -1848,26 +1881,8 @@ footer p {
   }
 }
 
+
 @media (max-width: 720px) {
-  .site-header {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-    min-height: 58px;
-  }
-
-  .primary-nav {
-    order: 3;
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 12px;
-    scrollbar-width: none;
-  }
-
-  .primary-nav::-webkit-scrollbar {
-    display: none;
-  }
-
   .header-actions {
     gap: 8px;
   }
@@ -2262,14 +2277,17 @@ footer p {
   max-width: none;
 }
 
-.landing-hero-copy > :not(.landing-brief) {
+.landing-hero-copy > :not(.brief-column) {
   grid-column: 1;
 }
 
-.landing-brief {
+.brief-column {
   grid-column: 2;
   grid-row: 1 / span 5;
   align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .landing-hero h1 {
@@ -2556,15 +2574,22 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .landing-hero-copy > :not(.landing-brief),
-  .landing-brief {
+  .landing-hero-copy > :not(.brief-column),
+  .brief-column {
     grid-column: auto;
   }
 
-  .landing-brief {
+  .brief-column {
     grid-row: auto;
     max-width: 780px;
     margin-top: 4px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .brief-column .landing-brief {
+    flex: 1;
   }
 
   .fit-grid,
@@ -2722,5 +2747,93 @@ footer p {
 
   .analysis-section {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- headshot ---------- */
+.headshot-brief {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.headshot-name {
+  display: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.name-row {
+  display: contents; /* h1 behaves as direct grid child on large screens */
+}
+
+@media (max-width: 1080px) {
+  .headshot-brief { display: none; }
+  .headshot-name { display: block; }
+  .name-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+  .name-row h1 {
+    margin-bottom: 0;
+  }
+}
+
+/* ---------- mobile nav (hamburger) — must be last to override all header rules ---------- */
+@media (max-width: 1080px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .primary-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 14px;
+    background: color-mix(in srgb, var(--paper) 96%, transparent);
+    backdrop-filter: saturate(140%) blur(18px);
+    -webkit-backdrop-filter: saturate(140%) blur(18px);
+    border-bottom: 1px solid var(--line);
+    z-index: 19;
+  }
+
+  .primary-nav a {
+    padding: 11px clamp(16px, 3vw, 42px);
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+
+  .primary-nav a::after {
+    display: none;
+  }
+
+  .primary-nav a:hover,
+  .primary-nav a:focus-visible {
+    color: var(--accent);
+    background: var(--paper-soft);
+  }
+
+  .site-header.nav-open .primary-nav {
+    display: flex;
+  }
+
+  .site-header,
+  .landing-page .site-header,
+  .projects-page .site-header {
+    grid-template-columns: 1fr auto;
   }
 }

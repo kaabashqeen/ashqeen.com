@@ -33,3 +33,11 @@ Then visit `http://localhost:8788`.
 10. Add `www.ashqeen.com` too, if you want both addresses to work.
 
 For an apex domain like `ashqeen.com`, Cloudflare Pages works best when the domain's nameservers are set to Cloudflare. Once the domain is active in Cloudflare DNS, Pages can add the needed DNS records for you.
+
+## YGOPlus case study
+
+`/ygoplus/` is a standalone static case study with a recorded demo. It does not call the YGOPlus API, database, Stripe account or image bucket. The home and Projects pages link to it; the full application remains a separate link.
+
+Publish only the repository contents. Never add YGOPlus backups, `.env` files, user data or the application Git bundle. The private preservation archive is intentionally outside this repository.
+
+If the full app is later paused, update the live-application links in `projects.html` and `ygoplus/index.html` to explain its status; the recorded demo will continue working.

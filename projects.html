@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Projects by Kaab Ashqeen — applied ML coursework, shipped data products, and AI-assisted builds.">
-    <meta name="theme-color" content="#f7f8f5" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
     <title>Kaab Ashqeen — Projects</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,30..100&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="stylesheet" href="styles.css">
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+    <link rel="preload" href="portfolio.css?v=20261117" as="style">
+    <link rel="stylesheet" href="portfolio.css?v=20261117">
     <script>
       (function () {
         try {
@@ -26,9 +26,10 @@
     </script>
   </head>
   <body class="projects-page">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" aria-label="Primary">
       <a class="brand" href="/" aria-label="Kaab Ashqeen home">
-        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span class="brand-mark" aria-hidden="true">ka.</span>
         <span>Kaab Ashqeen</span>
       </a>
       <nav class="primary-nav" aria-label="Main navigation">
@@ -49,10 +50,10 @@
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="projects-hero" aria-labelledby="projects-title">
-        <p class="eyebrow">Projects</p>
-        <h1 id="projects-title">Work that shows how I actually think.</h1>
+        <p class="eyebrow">Selected work / 01—03</p>
+        <h1 id="projects-title">A few things<br>I’ve put into the world<span class="name-dot">.</span></h1>
         <p>
           A consumer analytics product I built and ran end to end, a retail
           business I'm moving from paper to data, and published NLP research.
@@ -62,6 +63,7 @@
       <section class="project-index" aria-label="Project list">
         <article class="project-row is-featured">
           <div class="project-row-main">
+            <span class="project-number">01</span>
             <span class="project-status">Retired application · Case study &amp; demo</span>
             <h2>YGOPLUS</h2>
             <p>
@@ -103,6 +105,7 @@
 
         <article class="project-row" id="retail-ops">
           <div class="project-row-main">
+            <span class="project-number">02</span>
             <span class="project-status">In progress · Operator systems</span>
             <h2>Retail data modernization</h2>
             <p>
@@ -136,6 +139,7 @@
 
         <article class="project-row" id="nlp-classifier">
           <div class="project-row-main">
+            <span class="project-number">03</span>
             <span class="project-status">Published research · UT Computational Media Lab</span>
             <h2>NLP disaster response classifier</h2>
             <p>

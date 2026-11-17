@@ -1,0 +1,33 @@
+/* Shared visual direction with the portfolio; demo layout stays independent. */
+:root { --paper: #fafaf8; --ink: #17181b; --muted: #595b62; --accent: #234be9; --line: #d4d5d6; }
+body { font-family: 'Manrope', Arial, sans-serif; }
+.wrap { max-width: 1320px; padding-inline: 56px; }
+header { padding: 30px 0; }
+.brand { font-size: 20px; letter-spacing: -.05em; font-weight: 700; }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.eyebrow,.stack,.step { font-family: 'IBM Plex Mono', monospace; }
+.eyebrow { letter-spacing: .04em; font-size: 11px; font-weight: 400; }
+h1 { font-size: clamp(42px,5.1vw,72px); letter-spacing: -.06em; font-weight: 600; }
+h2 { letter-spacing: -.045em; font-weight: 600; }
+h3 { letter-spacing: -.025em; font-weight: 600; }
+.hero { padding: 64px 0; }
+.hero figure { transform: none; }
+.hero img { box-shadow: none; }
+figure img,video,.button { border-radius: 0; }
+.button { background: transparent; padding: 10px 0; border-bottom: 1px solid var(--accent); color: var(--accent); }
+.button::after { content: ' ↗'; margin-left: 14px; }
+.step { font-size: 13px; font-style: normal; }
+section { border-color: var(--ink); }
+.feature-row { padding: 44px 0; gap: 50px; }
+.result { font-weight: 500; font-size: 52px; letter-spacing: -.055em; }
+.architecture { background: #eeefed; }
+a:focus-visible,summary:focus-visible { outline-color: var(--accent); }
+@media(max-width:760px) {
+  .wrap { padding-inline: 20px; }
+  header { padding: 24px 0; }
+  .brand { font-size: 17px; }
+  .hero { padding: 40px 0; }
+  .hero img { box-shadow: none; }
+  .feature-row { gap: 24px; padding: 30px 0; }
+}
